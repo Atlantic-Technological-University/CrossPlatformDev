@@ -1,0 +1,46 @@
+{
+  "deciduous_native": [
+    {
+      "Id": "1",
+      "LatinName": "Quercus petraea",
+      "Family": "Cruise",
+      "CommonNames": [ "Irish Oak", "Welsh Oak" ],
+      "Native": "yes",
+      "Images": [ "quercus_petraea.png" ]
+    },
+    {
+      "Id": "2",
+      "LatinName": "acer pesudoplatanus",
+      "Family": "Sapindales",
+      "CommonNames": [ "Sycamore", "sycamore maple" ],
+      "Native": "yes",
+      "Images": [ "acer_pesudoplatanus.png" ]
+    },
+    {
+      "Id": "3",
+      "LatinName": "Fagus sylvatica",
+      "Family": "Fagaceae",
+      "CommonNames": [ "Beech", "Common Beech", "European Beech" ],
+      "Native": "yes",
+      "Images": [ "fagus_sylvatica.png" ]
+    }
+  ],
+  "deciduous_nonnative": [
+    {
+      "Id": "4",
+      "LatinName": "Metasequoia glyptostroboides",
+      "Family": "Cupressaceae",
+      "CommonNames": [ "Dawn Redwood", "test name" ],
+      "Native": "no",
+      "Images": [ "dawn_redwood.png" ]
+    },
+    {
+      "Id": "5",
+      "LatinName": "Acer saccharum",
+      "Family": "Sapindaceae",
+      "CommonNames": [ "Sugar maple", "Rock maple", "Sugar tree" ],
+      "Native": "no",
+      "Images": [ "acer_saccharum.png" ]
+    }
+  ]
+}
