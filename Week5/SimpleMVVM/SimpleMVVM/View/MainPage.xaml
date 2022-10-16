@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:SimpleMVVM.Model"
+             xmlns:viewmodel="clr-namespace:SimpleMVVM.ViewModel"
+             x:DataType="viewmodel:PeopleViewModel"
+             Title="{Binding PageTitle}"
+             x:Class="SimpleMVVM.MainPage">
+
+    <Grid ColumnDefinitions="*,*"
+          ColumnSpacing="5"
+          RowDefinitions="*,Auto"
+          RowSpacing="0">
+
+        <CollectionView BackgroundColor="Transparent"
+                        Grid.ColumnSpan="2"
+                        ItemsSource="{Binding People}"
+                        SelectionMode="None">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Person">
+                    <Grid Padding="10">
+                        <Frame HeightRequest="125"
+                               Padding="0">
+                            <Grid ColumnDefinitions="*, 2*"
+                                  RowDefinitions="*,*,*,*"
+                                  Padding="0">
+                                <Label Text="ID"
+                                       Style="{StaticResource LargeLabel}"
+                                       Grid.Row="0"
+                                       Grid.Column="0"/>
+
+                                <Label Text="Name"
+                                       Style="{StaticResource LargeLabel}"
+                                       Grid.Row="1"
+                                       Grid.Column="0"/>
+
+                                <Label Text="Email"
+                                       Style="{StaticResource LargeLabel}"
+                                       Grid.Row="2"
+                                       Grid.Column="0"/>
+
+                                <Label Text="Gender"
+                                       Style="{StaticResource LargeLabel}"
+                                       Grid.Row="3"
+                                       Grid.Column="0"/>
+
+                                <Label Text="{Binding ID}"
+                                       Style="{StaticResource SmallLabel}"
+                                       Grid.Row="0"
+                                       Grid.Column="1"/>
+
+                                <Label Text="{Binding FirstName}"
+                                       Style="{StaticResource SmallLabel}"
+                                       Grid.Row="1"
+                                       Grid.Column="1"/>
+
+                                <Label Text="{Binding Email}"
+                                       Style="{StaticResource SmallLabel}"
+                                       Grid.Row="2"
+                                       Grid.Column="1"/>
+
+                                <Label Text="{Binding Gender}"
+                                       Style="{StaticResource SmallLabel}"
+                                       Grid.Row="3"
+                                       Grid.Column="1"/>
+
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Get People"
+                Style="{StaticResource ButtonOutline}"
+                Command="{Binding GetPeopleCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="1"
+                Margin="8"/>
+
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.ColumnSpan="2"
+                           Grid.RowSpan="2"/>
+    </Grid>
+</ContentPage>
