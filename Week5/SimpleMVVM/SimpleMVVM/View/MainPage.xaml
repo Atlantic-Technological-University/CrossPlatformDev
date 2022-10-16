@@ -22,25 +22,25 @@
                     <Grid Padding="10">
                         <Frame HeightRequest="125"
                                Padding="0">
-                            <Grid ColumnDefinitions="*, 2*"
+                            <Grid ColumnDefinitions="* , 3*"
                                   RowDefinitions="*,*,*,*"
                                   Padding="0">
-                                <Label Text="ID"
+                                <Label Text="ID:"
                                        Style="{StaticResource LargeLabel}"
                                        Grid.Row="0"
                                        Grid.Column="0"/>
 
-                                <Label Text="Name"
+                                <Label Text="Name:"
                                        Style="{StaticResource LargeLabel}"
                                        Grid.Row="1"
                                        Grid.Column="0"/>
 
-                                <Label Text="Email"
+                                <Label Text="Email:"
                                        Style="{StaticResource LargeLabel}"
                                        Grid.Row="2"
                                        Grid.Column="0"/>
 
-                                <Label Text="Gender"
+                                <Label Text="Gender:"
                                        Style="{StaticResource LargeLabel}"
                                        Grid.Row="3"
                                        Grid.Column="0"/>

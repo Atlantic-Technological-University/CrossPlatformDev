@@ -33,7 +33,9 @@ public class PeopleViewModel : BaseViewModel
         try
         {
             IsBusy = true;
-            var people = await _peopleService.GetPeopleFileAsync();
+            //var people = await _peopleService.GetPeopleFileAsync();
+            var people = await _peopleService.GetPeopleRemoteAsync();
+            //
             if (people.Count != 0)
                 People.Clear();
 
