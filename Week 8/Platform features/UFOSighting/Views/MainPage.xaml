@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:UFOSighting.Models"
+             xmlns:viewmodel="clr-namespace:UFOSighting.ViewModels"
+             x:DataType="viewmodel:MainPageViewModel"
+             x:Class="UFOSighting.MainPage"
+             Title="UFO Encounters">
+
+    <Grid ColumnDefinitions="*,*"
+          ColumnSpacing="5"
+          RowDefinitions="*,Auto"
+          RowSpacing="0">
+
+                <CollectionView BackgroundColor="Transparent"
+                        Grid.ColumnSpan="2"
+                        ItemsSource="{Binding UFOEncounters}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Encounter">
+                        <Grid Padding="10">
+                        <Frame HeightRequest="125"
+                               Padding="0"
+                               Style="{StaticResource CardView}">
+                            <Grid Padding="0"
+                                  ColumnDefinitions="125,*"
+                                      RowDefinitions="Auto,Auto,Auto">
+                                        <Image
+                                            Aspect="AspectFill"
+                                            Grid.RowSpan="3"
+                                            WidthRequest="125"
+                                            HeightRequest="100"
+                                            Source="{Binding Icon}"/>
+
+                                        <HorizontalStackLayout Grid.Column="1"
+                                                         Grid.Row="0"
+                                                     Padding="5"
+                                                     Spacing="5"
+                                                     VerticalOptions="Center">
+                                        <Label Text="Encounter:"
+                                           Style="{StaticResource MediumLabel}"/>
+                                        <Label Text="{Binding DateTime}"
+                                           Style="{StaticResource SmallLabel}"/>
+                                    </HorizontalStackLayout>
+
+
+                                    <Label Grid.Column="1"
+                                           Grid.Row="1"
+                                           Padding="5"
+                                           VerticalOptions="Center"
+                                           Text="Encounter type"
+                                           Style="{StaticResource MediumLabel}">
+                                    </Label>
+                                    <HorizontalStackLayout Grid.Column="1"
+                                                           Grid.Row="2"
+                                                           Spacing="10"
+                                                           Padding="5"
+                                                           VerticalOptions="Fill">
+                                        <Label Text="Abduction"
+                                           IsVisible="{Binding Abduction}"
+                                           Style="{StaticResource SmallLabel}"/>
+                                        
+                                        <Label Text="Entity seen"
+                                           IsVisible="{Binding Abduction}"
+                                           Style="{StaticResource SmallLabel}"/>
+                                        
+                                        <Label Text="Sighting"
+                                           IsVisible="{Binding Abduction}"
+                                           Style="{StaticResource SmallLabel}"/>
+                                        
+                                    </HorizontalStackLayout>
+                                    
+                                </Grid>
+
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        
+
+        <!-- Binding for the label binds the command in the modelview to the button-->
+        <Button Text="Get UFO Encounters"
+                x:Name="button"
+                Style="{StaticResource ButtonOutline}"
+                Command="{Binding GetEncountersCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="1"
+                Margin="8"/>
+
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.ColumnSpan="2"
+                           Grid.RowSpan="2"/>
+
+    </Grid>
+
+
+</ContentPage>
