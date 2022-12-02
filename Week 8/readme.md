@@ -1,5 +1,5 @@
 # Week eight: Platform features with .NET MAUI   
-In week seven of the module we explore a number of features including navigating to a details page from a CollectionView item, location services, customising a UI with OnPlatform and OnIdiom XAML extensions and, executing platform specific code with conditional compilation.
+In week eight of the module we explore a number of features including navigating to a details page from a CollectionView item, location services, customising a UI with OnPlatform and OnIdiom XAML extensions and, executing platform specific code with conditional compilation.
 
 ## Repository content
 The demo code creates a skeleton implementation of a simple .NET MAUI application that displays a collection of UFO encounters. 

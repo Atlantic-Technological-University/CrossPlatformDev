@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:UFOSighting.ViewModels"
+             x:DataType="viewmodel:EncounterViewModel"
+             x:Class="UFOSighting.Views.EncounterPage"
+             Title="UFO Encounter details">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions="*, Auto, *"
+                  RowDefinitions="160, Auto">
+                <!-- Grey box for the top-->
+                <BoxView BackgroundColor="{StaticResource Primary}"
+                         Grid.ColumnSpan="3"
+                         HeightRequest="160"
+                         HorizontalOptions="FillAndExpand">
+                </BoxView>
+
+                <Frame Grid.RowSpan="2"
+                       Grid.Column="1"
+                       HeightRequest="160"
+                       WidthRequest="160"
+                       CornerRadius="80"
+                       HorizontalOptions="Center"
+                       IsClippedToBounds="True"
+                       Padding="0"
+                       Margin="0,80,0,0">
+                    <Image Aspect="AspectFill"
+                           HeightRequest="160"
+                           WidthRequest="160"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Source="{Binding Encounter.Icon}"/>
+                </Frame>
+            </Grid>
+            <Button Text="Show on map"
+                    Command="{Binding OpenMapCommand}"
+                    HorizontalOptions="Center"
+                    WidthRequest="200"
+                    Margin="8" 
+                    Style="{StaticResource ButtonOutline}"/>
+
+            <HorizontalStackLayout Grid.Column="1"
+                    Grid.Row="2"
+                    Padding="5"
+                    VerticalOptions="Fill">
+                <Label Text="Abduction" Style="{StaticResource SmallLabel}"/>
+                <CheckBox IsChecked="{Binding Encounter.Abduction}" IsEnabled="False"/>
+                
+                <Label Text="Entity seen" Style="{StaticResource SmallLabel}"/>
+                <CheckBox IsChecked="{Binding Encounter.EntitySeen}" IsEnabled="False"/>
+
+                <Label Text="Sighting" Style="{StaticResource SmallLabel}"/>
+                <CheckBox IsChecked="{Binding Encounter.Sighting}" IsEnabled="False"/>
+            </HorizontalStackLayout>
+            
+            <VerticalStackLayout Padding="10" Spacing="10">
+                <Label Text="{Binding Encounter.DateTime, StringFormat='Date and time: {0}'}"
+                       Style="{StaticResource MediumLabel}"/>
+                <Label Text="{Binding Encounter.Shape, StringFormat='Object shape: {0}'}"
+                       Style="{StaticResource MediumLabel}"/>
+                <Label Text="{Binding Encounter.Notes, StringFormat='Description: {0}'}"
+                       Style="{StaticResource MediumLabel}"/>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

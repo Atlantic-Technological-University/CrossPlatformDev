@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:UFOSighting.ViewModels"
+             x:DataType="viewmodel:SettingsViewModel"
+             x:Class="UFOSighting.Views.SettingsPage"
+             Title="Application settings">
+    <VerticalStackLayout 
+        Padding="10"
+        Spacing="10">
+        <Label 
+            Text="Data sources"
+            Style="{StaticResource LargeLabel}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+
+        <BoxView HeightRequest="5"
+              WidthRequest="300"
+              CornerRadius="10"
+              BackgroundColor="{StaticResource Primary}"
+              VerticalOptions="Center" 
+              HorizontalOptions="StartAndExpand"/>
+
+        <Grid ColumnDefinitions="Auto, Auto"
+              RowDefinitions="Auto, Auto, Auto"
+              ColumnSpacing="10"
+              Padding="10">
+
+            <Label Text="Local file"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Start" />
+
+            <Switch 
+                Grid.Row="0"
+                Grid.Column="1"/>
+
+            <Label Text="Local database"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Start" />
+
+            <Switch 
+                Grid.Row="1"
+                Grid.Column="1"/>
+
+            <Label Text="Web service"
+                   Grid.Row="2"
+                   Grid.Column="0"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Start" />
+
+            <Switch 
+                Grid.Row="2"
+                Grid.Column="2"/>
+        </Grid>
+        <Button 
+            Style="{StaticResource ButtonOutline}"
+            Text="Update preferences"
+            Command="{Binding UpdatePreferencesCommand}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+    </VerticalStackLayout>
+</ContentPage>
