@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TabbedPageNavDemo.EverGreenPage"
+             Title="EverGreen"
+             IconImageSource="evergreendark.png">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome the Evergreen Tree page"
+            VerticalOptions="Center" 
+            FontSize="28"
+            HorizontalOptions="Center" />
+
+        <Image Source="evergreenlight.png"
+               HeightRequest="200"
+               WidthRequest="200"
+               HorizontalOptions="Center"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StackLayoutDemo.MainPage">
+
+    <StackLayout x:Name="stack"
+                 Spacing="20"
+                 Margin="10"
+                 Orientation="Vertical">
+        <!--Substack -->
+        <StackLayout x:Name="Substack1"
+                     Spacing="5"
+                     Padding="10"
+                     Orientation="Vertical">
+            <BoxView Color="Silver" HeightRequest="40"/>
+            <BoxView Color="Blue" HeightRequest="40"/>
+            <BoxView Color="Green" HeightRequest="40"/>
+        </StackLayout>
+        <!--Substack -->
+
+        <StackLayout x:Name="Substack2"
+                     Orientation="Vertical">
+            <BoxView Color="Silver" HeightRequest="40"/>
+            <BoxView Color="Blue" HeightRequest="40"/>
+            <BoxView Color="Green" HeightRequest="40"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

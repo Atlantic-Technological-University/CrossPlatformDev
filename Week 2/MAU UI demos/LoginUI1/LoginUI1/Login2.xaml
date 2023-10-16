@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginUI1.Login2"
+             Title="Login using XAML"
+             BackgroundColor="#512bdf">
+    
+    <VerticalStackLayout Margin="15" Padding="30, 60, 30, 30">
+
+        <Label Text="Please login" FontSize="30" TextColor="AntiqueWhite"/>
+        <Label Text="Username" TextColor="White"/>
+        <Entry x:Name="userName"/>
+        <Label Text="Password" TextColor="White"/>
+        <Entry IsPassword="True"/>
+        <Button x:Name="btnLogin" 
+                Text="Log in"
+                BackgroundColor="#0094FF"
+                Clicked="LoginButton_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

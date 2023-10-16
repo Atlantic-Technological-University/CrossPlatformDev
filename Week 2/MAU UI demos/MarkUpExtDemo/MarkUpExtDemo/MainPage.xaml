@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mycode="clr-namespace:MarkUpExtDemo"
+             x:Class="MarkUpExtDemo.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label x:Name="lblText"
+                Text="Message" TextColor="Black" FontSize="{mycode:GlobalFontSize}" FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+
+            <Button x:Name="btnChangeText" Text="Change label" FontSize="{x:Static mycode:AppDefaults.XLFontSize}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

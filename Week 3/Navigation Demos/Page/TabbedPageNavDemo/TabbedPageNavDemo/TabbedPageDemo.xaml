@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TabbedPageNavDemo"
+             x:Class="TabbedPageNavDemo.TabbedPageDemo"
+             xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
+             windows:TabbedPage.HeaderIconsEnabled="True"
+             windows:TabbedPage.HeaderIconsSize="24,24"
+             windows:Page.ToolbarPlacement="Bottom"
+            
+             Title="TabbedPage1">
+    
+    <local:DeciduousPage 
+        IconImageSource="deciduouslight.png"/>
+    <local:EverGreenPage
+        IconImageSource="evergreenlight.png"/>
+    <local:SettingsPage
+        IconImageSource="settings.png"/>
+
+</TabbedPage>

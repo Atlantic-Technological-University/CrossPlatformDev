@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShellFlyoutDemo.Pages.NonNativeTrees"
+             Title="NonNativeTrees">
+    <ScrollView>
+        <VerticalStackLayout
+            Margin="20"
+            Spacing="30">
+            <Label 
+                Text="Non-Native Deciduous trees"
+                FontSize="28"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+            <Label Text="Metasequoia glyptostroboides"
+                   FontSize="24"
+                   FontAttributes="Italic,Bold"
+                   HorizontalOptions="Start"/>
+            <Image Source="dawn_redwood.jpg"
+                   WidthRequest="400"
+                   HeightRequest="400"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start"/>
+
+            <Label Text="The dawn redwood, is a fast-growing, endangered deciduous conifer. It is the sole living species of the genus Metasequoia, one of three genera in the subfamily Sequoioideae of the family Cupressaceae. It now survives only in wet lower slopes and montane river and stream valleys in the border region of Hubei and Hunan provinces and Chongqing municipality in south-central China,
+                   notably in Lichuan county in Hubei. Although the shortest of the redwoods, it can grow to 120 ft (37 m) in height"
+                   FontSize="20"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

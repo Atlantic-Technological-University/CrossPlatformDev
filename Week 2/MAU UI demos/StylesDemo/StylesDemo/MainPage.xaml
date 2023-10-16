@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StylesDemo.MainPage">
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="DarkSlateBlue"/>
+            <Setter Property="BorderColor" Value="Azure"/>
+            <Setter Property="BorderWidth" Value="3"/>
+            <Setter Property="TextColor" Value="{StaticResource NormalButtonTextColour}"/>
+        </Style>
+
+        <Style x:Key="OverrideStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="DarkSlateBlue"/>
+            <Setter Property="BorderColor" Value="Azure"/>
+            <Setter Property="BorderWidth" Value="3"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+    </ContentPage.Resources>
+
+
+    <VerticalStackLayout>
+        <Button Text="Button 1"/>
+        <Button Text="Button 2"/>
+        <Button Text="Button 3"/>
+        <Button Text="Button 4"
+                Style="{StaticResource OverrideStyle}"/>
+    </VerticalStackLayout>
+
+</ContentPage>

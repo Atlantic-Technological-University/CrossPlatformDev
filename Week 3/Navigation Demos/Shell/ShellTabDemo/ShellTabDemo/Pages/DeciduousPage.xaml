@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShellTabDemo.Pages.DeciduousPage"
+             Title="Deciduous trees">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10">
+            <Label Text="Deciduous Trees" 
+                   FontSize="40"/>
+
+            <BoxView Color="ForestGreen" CornerRadius="10"
+                         HeightRequest="5"
+                     HorizontalOptions="Fill"/>
+            <Grid ColumnDefinitions="Auto,*"
+                RowDefinitions="Auto, 2*, Auto">
+
+                <ImageButton Source="quercus_petraea.jpg"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="3"
+                       Margin="10,10,10,10"
+                       Aspect="AspectFill"
+                       HeightRequest="100"
+                       WidthRequest="100" />
+                <Label Text="Pinus sylvestris"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       FontSize="30"
+                       FontAttributes="Bold,Italic" />
+                <Label Text="The genus Quercus is native to the Northern Hemisphere, and includes deciduous and evergreen species extending from cool temperate to tropical latitudes in the Americas, Asia, Europe, and North Africa. "
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       FontSize="20" />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto,*"
+                RowDefinitions="Auto, 2*, Auto">
+
+                <ImageButton Source="acer_griseum.jpg"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="3"
+                       Margin="10,10,10,10"
+                       Aspect="AspectFill"
+                       HeightRequest="100"
+                       WidthRequest="100" />
+                <Label Text="Acer griseum"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       FontSize="30"
+                       FontAttributes="Bold,Italic" />
+                <Label Text="Acer griseum or paper-bark maple is one of the most beautiful of all small trees, suitable for gardens of all sizes, is this species from China. The dark green, trifoliate leaves, densely covered beneath with blue-white downy hairs, colour splendidly in autumn turning the whole crown deep crimson or red."
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       FontSize="20" />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto,*"
+                RowDefinitions="Auto, 2*, Auto">
+
+                <ImageButton Source="acer_palmatum.jpg"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="3"
+                       Margin="10,10,10,10"
+                       Aspect="AspectFill"
+                       HeightRequest="100"
+                       WidthRequest="100" />
+                <Label Text="Acer palmatum"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       FontSize="30"
+                       FontAttributes="Bold,Italic" />
+                <Label Text="Acer palmatum or Japanese Maple is a small, slow growing tree up to 15ft wild mid-green leaves, scarlet in autumn."
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       FontSize="20" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

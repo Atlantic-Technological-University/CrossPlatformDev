@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShellNavigationDemo.Pages.EverGreenPage"
+             Title="Evergreen trees">
+
+    <!-- Removes the back navigation button -->
+    <!-- 
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior> 
+    -->
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label Text="EverGreenPage" 
+                   FontSize="40"/>
+            <Entry Placeholder="test"/>
+            <Grid x:Name="Evergreen_trees"
+                ColumnDefinitions="Auto,*"
+                RowDefinitions="Auto, Auto,*">
+
+                <ImageButton Source="scots_pine.png"
+                       x:Name="ImgEvergreenNative"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="3"
+                       Margin="10,10,10,10"
+                       Aspect="AspectFill"
+                       HeightRequest="200"
+                       WidthRequest="200" />
+                <Label Text="Native evergreen trees"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Margin="10,10,10,10"
+                       FontSize="Large"
+                       FontAttributes="Bold" />
+                <Label Text="Click on the image to view our list of native evergreen trees."
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Margin="10,10,10,10"
+                       FontSize="20" />
+
+            </Grid>
+
+            <Grid x:Name="Evergreen_nonnative"
+                ColumnDefinitions="Auto,*"
+                RowDefinitions="Auto, Auto,*">
+
+                <ImageButton Source="sequoia_semperverins.png"
+                       x:Name="ImgEvergreenNonNative"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="3"
+                       Margin="10,10,10,10"
+                       Aspect="AspectFill"
+                       HeightRequest="200"
+                       WidthRequest="200" />
+                <Label Text="Non-native evergreen trees"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Margin="10,10,10,10"
+                       FontSize="Large"
+                       FontAttributes="Bold" />
+                <Label Text="Click on the image to view our list of non-native evergreen trees."
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Margin="10,10,10,10"
+                       FontSize="20" />
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

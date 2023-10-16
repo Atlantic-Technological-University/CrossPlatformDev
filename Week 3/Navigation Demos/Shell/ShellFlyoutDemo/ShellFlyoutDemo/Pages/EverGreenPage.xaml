@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShellFlyoutDemo.Pages.EverGreenPage">
+    <ScrollView>
+        <VerticalStackLayout
+            Margin="20"
+            Spacing="30">
+            <Label 
+                Text="Evergreen trees"
+                FontSize="28"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+            <Label Text="Sequoia sempervirens"
+                   FontSize="24"
+                   FontAttributes="Italic,Bold"
+                   HorizontalOptions="Start"/>
+            <Image Source="sequoia_semperverins2.png"
+                   WidthRequest="400"
+                   HeightRequest="400"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start"/>
+
+            <Label Text="Sequoia sempervirens also known as coast redwood, coastal redwood and Calfornia redwood is the sole living species of the genus Sequoia in the cypress family. It is an evergreen long-lived tree living 1,200-2,200 years or more."
+                   FontSize="20"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start"/>
+
+            <Label Text="Sequoiadendron giganteum"
+                   FontSize="24"
+                   FontAttributes="Italic,Bold"
+                   HorizontalOptions="Start"/>
+            <Image Source="sequoiadendron_giganteum2.png"
+                   WidthRequest="400"
+                   HeightRequest="400"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start"/>
+
+            <Label Text="Sequoiadendron giganteum (giant sequoia; also known as giant redwood, Sierra redwood and Wellingtonia) is the sole living species in the genus Sequoiadendron, and one of three species of coniferous trees known as redwoods."
+                   FontSize="20"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:ShellFlyoutDemo.Pages"
+       x:Class="ShellFlyoutDemo.FlyoutDemoPage"
+       Title="FlyoutDemoPage"
+       FlyoutIcon="tree.png">
+    <Shell.FlyoutHeader>
+        <Grid RowDefinitions="*"
+              ColumnDefinitions="*,*,*"
+            HeightRequest="100" BackgroundColor="#0B6623">
+            <Image Source="evergreendark.png"
+                   HeightRequest="50"
+                   Grid.Column="0"/>
+            <Label Text="Trees"
+                   Grid.Column="1"
+                   Grid.Row="0"
+                   FontSize="30"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <Image Source="deciduousdark.png"
+                   HeightRequest="50"
+                   Grid.Column="2"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem 
+        Title="Deciduous Trees"
+                Icon="tree.png">
+
+        <ShellContent
+            Title="Native" Icon="tall_bush.png"
+            ContentTemplate="{DataTemplate local:NativeTrees}"/>
+
+        <ShellContent
+        Title="Non Native" Icon="round_bush.png"
+        ContentTemplate="{DataTemplate local:NonNativeTrees}"/>
+        
+        
+    </FlyoutItem>
+    
+    <!-- 
+    <FlyoutItem 
+        Title="Deciduous Trees"
+                Icon="tree.png">
+        <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:DeciduousPage}"/>
+    </FlyoutItem>-->
+
+    
+    <FlyoutItem Title="Evergree Trees"
+                Icon="tree2.png">
+        <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:EverGreenPage}"/>
+    </FlyoutItem>
+
+
+    <!--
+        Shell has implicit conversion operators that enable the Shell visual hierarchy to be simplified.
+        As a subclass of Shell can only ever contain a FlyoutItem object or a Tabbar object, 
+        which can only contain a Tab object or a ShellContent object.
+        
+        The implicit conversion automatically wraps the ShellContent objects below the Tab objects
+        -->
+
+    <!-- Create a backdrop for the flyout when it appears -->
+    <!--  
+    <Shell.FlyoutBackdrop>
+        <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="0,1">
+            <GradientStop Color="#5DBB63" Offset="0.1"/>
+            <GradientStop Color="#3CB043" Offset="0.6"/>
+            <GradientStop Color="#354A21" Offset="1.6"/>
+        </LinearGradientBrush>
+                             
+    </Shell.FlyoutBackdrop>
+             
+    -->
+    
+</Shell>

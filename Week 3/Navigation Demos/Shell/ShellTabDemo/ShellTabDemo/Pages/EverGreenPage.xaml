@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShellTabDemo.Pages.EverGreenPage"
+             Title="Evergreen trees">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10">
+            <Label Text="Evergreen Trees" 
+                   FontSize="40"/>
+
+            <BoxView Color="ForestGreen" CornerRadius="10"
+                         HeightRequest="5"
+                     HorizontalOptions="Fill"/>
+            <Grid ColumnDefinitions="Auto,*"
+                RowDefinitions="Auto, 2*, Auto">
+
+                <ImageButton Source="scots_pine.png"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="3"
+                       Margin="10,10,10,10"
+                       Aspect="AspectFill"
+                       HeightRequest="100"
+                       WidthRequest="100" />
+                <Label Text="Pinus sylvestris"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       FontSize="30"
+                       FontAttributes="Bold,Italic" />
+                <Label Text="Scots pine, Scotch pine or Baltic pine, is a species of tree in the pine family Pinaceae that is native to Eurasia."
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       FontSize="20" />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto,*"
+                RowDefinitions="Auto, 2*, Auto">
+
+                <ImageButton Source="sequoiadendron_giganteum.png"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="3"
+                       Margin="10,10,10,10"
+                       Aspect="AspectFill"
+                       HeightRequest="100"
+                       WidthRequest="100" />
+                <Label Text="Sequoiadendron giganteum"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       FontSize="30"
+                       FontAttributes="Bold,Italic" />
+                <Label Text="Sequoiadendron giganteum is the sole living species in the genus Sequoiadendron, and one of three species of coniferous trees known as redwoods, classified in the family Cupressaceae in the subfamily Sequoioideae, together with Sequoia sempervirens and Metasequoia glyptostroboides."
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       FontSize="20" />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto,*"
+                RowDefinitions="Auto, 2*, Auto">
+
+                <ImageButton Source="sequoia_sempervirens.png"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="3"
+                       Margin="10,10,10,10"
+                       Aspect="AspectFill"
+                       HeightRequest="100"
+                       WidthRequest="100" />
+                <Label Text="Sequoia sempervirens"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       FontSize="30"
+                       FontAttributes="Bold,Italic" />
+                <Label Text="Sequoia sempervirens is the sole living species of the genus Sequoia in the cypress family Cupressaceae. Common names include coast redwood, coastal redwood, and California redwood. It is an evergreen, long-lived, monoecious tree living 1,200–2,200 years or more."
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       FontSize="20" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

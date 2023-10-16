@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ShellTabDemo.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:ShellTabDemo.Pages"
+    xmlns:local="clr-namespace:ShellTabDemo"
+    Shell.FlyoutBehavior="Disabled">
+
+    <!-- Single tab-->
+
+    <!-- 
+    <TabBar>
+        <ShellContent
+            ContentTemplate="{DataTemplate pages:EverGreenPage}"/>
+    </TabBar>
+    -->
+    
+    
+
+    <!-- Multiple tabs-->
+    <!-- -->
+    <TabBar>
+        <Tab Title="Evergreen trees"
+             Icon="evergreendark">
+            <ShellContent ContentTemplate="{DataTemplate pages:EverGreenPage}"/>
+        </Tab>
+        <Tab Title="Deciduous trees"
+             Icon="deciduousdark">
+            <ShellContent ContentTemplate="{DataTemplate pages:DeciduousPage}"/>
+        </Tab>
+        
+    </TabBar>
+    
+</Shell>
