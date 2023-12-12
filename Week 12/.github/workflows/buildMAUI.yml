@@ -1,0 +1,54 @@
+name: build-maui-app
+run-name: ${{ github.actor }} is running a project build
+#Trgger the run on a push or manually
+on: 
+  workflow_dispatch:
+  push:
+  # only run the debug build on non-main branches
+    branches-ignore: [ "main"]
+
+permissions: # Required by the test-reporter action
+  contents: read
+  actions: read
+  checks: write
+    
+jobs:
+  build-MAUI:
+    #runs-on: windows-latest
+    runs-on: windows-latest
+    defaults:
+      run:
+        #set the default shell to powershell
+        shell: pwsh
+    strategy:
+      matrix:
+        dotnet-version: ['8.0.x']
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4    
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+          #cache: true
+      - name: Display dotnet version
+        run: dotnet --version
+      - name: Install MAUI workloads
+        run: dotnet workload install maui 
+      - name: Build .NET MAUI and test projects
+        run: dotnet build src/
+
+      - name: Test the build
+        run: |
+            dotnet test src/ --no-restore `
+              --logger "trx;logfilename=test_results.trx" `
+              --logger "html;logfilename=test_results.html"
+        # Log the results from the tests as trx and html files in the default TestResults directory within the test project
+      - name: Publish Test Results
+        uses: dorny/test-reporter@v1
+        if: success() || failure()      # run this step even if previous step failed
+        with:
+          name: xUnit tests             #Name of the check run that will be created
+          path: src/MAUITestProject/TestResults/*.trx
+          reporter: dotnet-trx

@@ -1,0 +1,43 @@
+name: "CodeQL analysis"
+
+on:
+  push:
+    # only run on push event for non-main branches
+    branches-ignore: [ "main"]
+  pull_request:
+    branches: [ main ]
+  # Run at 21:15 on a Sunday. See: https://crontab.guru/#15_21_*_*_0
+  #schedule:
+  #  - cron: '15 21 * * 0'
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: windows-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'csharp']
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: ${{ matrix.language }}
+
+    - name: Install MAUI workloads
+      run: dotnet workload install maui 
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v2
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
