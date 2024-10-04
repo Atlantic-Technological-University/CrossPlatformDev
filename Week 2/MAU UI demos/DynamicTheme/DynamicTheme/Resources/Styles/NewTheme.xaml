@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DynamicTheme.Resources.Styles.NewTheme">
+
+    <Color x:Key="Primary">#57cc99</Color>
+    <Color x:Key="PrimaryDark">#22577a</Color>
+    <Color x:Key="PrimaryDarkText">#38a3a5</Color>
+    <Color x:Key="Secondary">#80ed99</Color>
+    <Color x:Key="SecondaryDarkText">#22577a</Color>
+    <Color x:Key="Tertiary">#c7f9cc</Color>
+
+    <Color x:Key="White">White</Color>
+    <Color x:Key="Black">Black</Color>
+    <Color x:Key="Magenta">#D600AA</Color>
+    <Color x:Key="MidnightBlue">#190649</Color>
+    <Color x:Key="OffBlack">#22577a</Color>
+
+    <Style TargetType="Page" ApplyToDerivedTypes="True">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={DynamicResource White}, Dark={DynamicResource OffBlack}}" />
+    </Style>
+
+
+
+</ResourceDictionary>

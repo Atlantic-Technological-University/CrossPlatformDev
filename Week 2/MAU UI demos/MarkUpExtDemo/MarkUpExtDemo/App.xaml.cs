@@ -13,5 +13,5 @@ public partial class App : Application
 static class AppDefaults
 {
     public static double NormalFontSize = 18;
-    public static double XLFontSize = 40;
+    public static double XLFontSize = 60;
 }

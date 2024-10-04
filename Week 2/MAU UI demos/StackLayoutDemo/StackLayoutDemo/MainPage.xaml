@@ -4,12 +4,13 @@
              x:Class="StackLayoutDemo.MainPage">
 
     <StackLayout x:Name="stack"
-                 Spacing="20"
-                 Margin="10"
+                 Spacing="40"
+                 Padding="20"
+                 Margin="20"
                  Orientation="Vertical">
         <!--Substack -->
         <StackLayout x:Name="Substack1"
-                     Spacing="5"
+                     Spacing="10"
                      Padding="10"
                      Orientation="Vertical">
             <BoxView Color="Silver" HeightRequest="40"/>
@@ -23,6 +24,14 @@
             <BoxView Color="Silver" HeightRequest="40"/>
             <BoxView Color="Blue" HeightRequest="40"/>
             <BoxView Color="Green" HeightRequest="40"/>
+        </StackLayout>
+
+        <StackLayout x:Name="Substack3"
+                     Spacing="10"
+             Orientation="Horizontal">
+            <BoxView Color="Silver" WidthRequest="40" HeightRequest="40"/>
+            <BoxView Color="Blue" WidthRequest="40" HeightRequest="40"/>
+            <BoxView Color="Green" WidthRequest="40" HeightRequest="40"/>
         </StackLayout>
     </StackLayout>
 
