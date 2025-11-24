@@ -34,7 +34,9 @@
 
             <Switch 
                 Grid.Row="0"
-                Grid.Column="1"/>
+                Grid.Column="1"
+                IsToggled="{Binding LocalData}"
+                IsEnabled="{Binding LocalDataEnabled}"/>
 
             <Label Text="Local database"
                    Grid.Row="1"
@@ -44,7 +46,9 @@
 
             <Switch 
                 Grid.Row="1"
-                Grid.Column="1"/>
+                Grid.Column="1"
+                IsToggled="{Binding LocalDB}"
+                IsEnabled="{Binding LocalDBEnabled}"/>
 
             <Label Text="Web service"
                    Grid.Row="2"
@@ -54,7 +58,9 @@
 
             <Switch 
                 Grid.Row="2"
-                Grid.Column="2"/>
+                Grid.Column="2"
+                IsToggled="{Binding WebService}"
+                IsEnabled="{Binding WebServiceEnabled}"/>
         </Grid>
         <Button 
             Style="{StaticResource ButtonOutline}"

@@ -4,11 +4,12 @@ using Microsoft.UI.Windowing;
 using Windows.Graphics;
 #endif
 namespace UFOSighting;
-
+using UFOSighting.Views;
+using UFOSighting.Services;
 public partial class App : Application
 {
-    const int WindowWidth = 600;
-    const int WindowHeight = 800;
+    const int WindowWidth = 1280;
+    const int WindowHeight = 720;
     public App()
 	{
 		InitializeComponent();
@@ -26,6 +27,13 @@ public partial class App : Application
 #endif
         });
 
-        MainPage = new AppShell();
-	}
+        //MainPage = new AppShell();
+        
+    }
+
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+        return new Window(new AppShell());
+    }
+
 }

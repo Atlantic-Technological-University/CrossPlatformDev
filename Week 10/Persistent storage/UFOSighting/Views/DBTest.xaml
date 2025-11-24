@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UFOSighting.Views.DBTest"
+             Title="DBTest">
+    <VerticalStackLayout>
+        <Button Text ="Add an encounter"
+                Clicked="OnAddEncounter"/>
+
+        <Button Text ="Get all encounters"
+                Clicked="OnGetAllEncounters"/>
+        <Label 
+            Text="Number of encounters = "
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <CollectionView x:Name="encounterList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="Auto, Auto, Auto" ColumnSpacing="10">
+
+                        <Label Text="{Binding ID}" />
+                        <Label Grid.Column="1" Text="{Binding DateTime}" />
+                        <Label Grid.Column="2" Text="{Binding Notes}" />
+                    
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

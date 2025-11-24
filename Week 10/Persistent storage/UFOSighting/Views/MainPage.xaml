@@ -6,7 +6,16 @@
              x:DataType="viewmodel:MainPageViewModel"
              x:Class="UFOSighting.MainPage">
 
-    <Grid ColumnDefinitions="*,*"
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings" Command="{Binding NavigateToSettingsCommand}" />
+        <ToolbarItem Text="Test write" Command="{Binding TestWriteCommand}" />
+        <ToolbarItem Text="Test read" Command="{Binding TestReadCommand}" />
+        <ToolbarItem Text="Test DB" Command="{Binding TestDBCommand}" />
+    </ContentPage.ToolbarItems>
+    
+        
+
+        <Grid ColumnDefinitions="*,*"
           ColumnSpacing="5"
           RowDefinitions="*,Auto"
           RowSpacing="0">

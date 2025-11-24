@@ -11,7 +11,7 @@ namespace UFOSighting.ViewModels;
 public partial class MainPageViewModel : BaseViewModel
 {
     // UFODataService
-    UFODataService _ufoDataService;
+    UFOFileDataService _ufoDataService;
 
     // Connectivity and geolocation services
     IConnectivity _connectivityService;
@@ -23,7 +23,7 @@ public partial class MainPageViewModel : BaseViewModel
     [ObservableProperty]
     bool isRefreshing;
 
-    public MainPageViewModel(UFODataService ufoDataService, IConnectivity connectivity, 
+    public MainPageViewModel(UFOFileDataService ufoDataService, IConnectivity connectivity, 
         IGeolocation geolocation)
     {
         _ufoDataService = ufoDataService;
@@ -31,6 +31,40 @@ public partial class MainPageViewModel : BaseViewModel
         _geolocationService = geolocation; 
     }
     
+    [RelayCommand]
+    async Task NavigateToSettingsAsync(){
+        await Shell.Current.GoToAsync($"{nameof(SettingsPage)}", true);
+    }
+
+    //string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "temp.txt");
+
+    [RelayCommand]
+    async Task TestDB()
+    {
+        await Shell.Current.GoToAsync($"{nameof(DBTest)}", true);
+    }
+
+    [RelayCommand]
+    private void TestWrite() {
+        // Get the path on the device to the app sandbox
+        string fileName = Path.Combine(FileSystem.AppDataDirectory, "temp.txt");
+        File.WriteAllText(fileName, "Hello World");       
+    }
+
+    [RelayCommand]
+    async Task TestReadAsync()
+    {
+        string fileName = Path.Combine(FileSystem.AppDataDirectory, "temp.txt");
+        if (File.Exists(fileName))
+        {
+            string text = await File.ReadAllTextAsync(fileName);
+            await Shell.Current.DisplayAlert("File Read", text, "OK");
+        }
+        else
+        {
+            await Shell.Current.DisplayAlert("File Read", "File does not exist", "OK");
+        }
+    }
 
     // Create a method to get the encounters from the data service and add them to the view model.
     // [RelayCommand] Comes from the MVVM namespace and turns the GetEncountersAsync task into a command
