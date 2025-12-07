@@ -1,26 +1,23 @@
-namespace MAUITestProject
+﻿namespace MauiTestProject
 {
-    public class DummyUnitTests
+    public class UnitTest1
     {
         [Fact]
-        public void DummyTest1()
+        public void Test1()
         {
             Assert.True(true);
-
         }
 
         [Fact]
-        public void DummyTest2()
+        public void Test2()
         {
             Assert.True(true);
-
         }
 
         [Fact]
-        public void DummyTest3()
+        public void Test3()
         {
             Assert.True(true);
-
         }
     }
 }

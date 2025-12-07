@@ -22,13 +22,13 @@ jobs:
         shell: pwsh
     strategy:
       matrix:
-        dotnet-version: ['8.0.x']
+        dotnet-version: ['9.0.x']
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4    
+        uses: actions/checkout@v5   
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
           #cache: true
@@ -46,7 +46,7 @@ jobs:
               --logger "html;logfilename=test_results.html"
         # Log the results from the tests as trx and html files in the default TestResults directory within the test project
       - name: Publish Test Results
-        uses: dorny/test-reporter@v1
+        uses: dorny/test-reporter@v2
         if: success() || failure()      # run this step even if previous step failed
         with:
           name: xUnit tests             #Name of the check run that will be created
