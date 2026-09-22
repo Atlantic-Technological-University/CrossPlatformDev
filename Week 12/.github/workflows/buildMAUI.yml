@@ -1,4 +1,4 @@
-name: build-maui-app
+﻿name: build-maui-app
 run-name: ${{ github.actor }} is running a project build
 #Trgger the run on a push or manually
 on: 
@@ -22,7 +22,7 @@ jobs:
         shell: pwsh
     strategy:
       matrix:
-        dotnet-version: ['9.0.x']
+        dotnet-version: ['10.0.x']
     
     steps:
       - name: Checkout code
