@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36717.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMauiApp", "TestMauiApp\TestMauiApp.csproj", "{A2C994A2-3D0F-4185-9183-8ADEF955BA6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiTestProject", "MauiTestProject\MauiTestProject.csproj", "{B7DBDCB6-46B5-47A8-BEF0-C667F9740714}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiTestProject", "MAUITestProject\MAUITestProject.csproj", "{B7DBDCB6-46B5-47A8-BEF0-C667F9740714}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
